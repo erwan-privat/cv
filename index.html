@@ -14,19 +14,147 @@
     <title>Erwan Privat – CV</title>
     <style>
 
+/* GENERAL */
+
+:root {
+  --bg:    #fff;
+  --fg:    #222;
+  --hd-bg: #025;
+  --hd-fg: #fff;
+  --h3-fg: #014;
+
+  --a-bg:  #0002;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  list-style: none;
+}
+
+html {
+  background: var(--fg);
+}
+
 body {
+  width: 21cm;
+  margin: auto;
+  padding-bottom: 5mm;
   font-family: "Inria Sans", sans-serif;
-  background: #eee;
-  color: #222;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  background: var(--a-bg);
+}
+
+sub, sup {
+  font-size: 66%;
+}
+
+/* HEADER */
+
+header {
+  font-size: 12pt;
+  background: var(--hd-bg);
+  color: var(--hd-fg);
+  padding: 5mm 1cm;
+  text-align: center;
+}
+
+h1 {
+  font-size: 42pt;
 }
 
 h1 b {
   font-variant: small-caps;
 }
 
+#main-desc {
+  font-size: 15pt;
+  margin-top: 3mm;
+}
+
 address ul {
-  padding: 0;
-  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 5mm;
+  font-style: normal;
+}
+
+address li {
+  padding: 4mm;
+}
+
+address li a {
+  padding: 3mm;
+}
+
+/* [id^="lbl-"] { */
+address label {
+  display: none;
+}
+
+/* MAIN */
+
+main {
+  margin: 5mm 15mm;
+  font-size: 12pt;
+}
+
+section {
+  font-size: 14pt;
+}
+
+h2 {
+  display: inline-block;
+  margin-top: 5mm;
+  font-size: 24pt;
+  color: var(--hd-bg);
+  border-bottom: 2pt solid var(--hd-bg);
+}
+
+#lang h2 {
+  margin-bottom: 5mm;
+}
+
+h3 {
+  margin-top: 5mm;
+  font-size: 16pt;
+  color: var(--h3-fg);
+}
+
+.date, .place {
+  font-style: italic;
+  margin: 2mm 0;
+}
+
+.entry, .desc {
+  margin-top: 3mm;
+}
+
+dt {
+  display: inline-block;
+  width: 2cm;
+  font-weight: bold;
+}
+
+dt:after {
+  content: ":";
+}
+
+dd {
+  display: inline-block;
+  margin-left: 6pt;
 }
 
     </style>
@@ -36,24 +164,10 @@ address ul {
       <h1>Erwan <b>Privat</b></h1>
       <p id="main-desc">
         Postdoctoral Researcher in Theoretical and
-        Computational Chemistry
+        Computational Physics and Chemistry
       </p>
       <address>
         <ul>
-          <li>
-            <label id="lbl-address">Address</label>
-            <p id="address">
-              7, route de Magnac<br>
-              19320 Saint-Martin-la-Méanne<br>
-              FRANCE
-            </p>
-          </li>
-          <li>
-            <label id="lbl-phone">Phone</label>
-            <a id="phone" href="tel:+33635945095">
-              +33 6 35 94 50 95
-            </a>
-          </li>
           <li>
             <label id="lbl-email">E-mail</label>
             <a id="email"
@@ -74,6 +188,20 @@ address ul {
               href="https://github.com/erwan-privat">
               github.com/erwan-privat
             </a>
+          </li>
+          <li>
+            <label id="lbl-phone">Phone</label>
+            <a id="phone" href="tel:+33635945095">
+              +33 6 35 94 50 95
+            </a>
+          </li>
+          <li id="li-address">
+            <label id="lbl-address">Address</label>
+            <p id="address">
+              7 route de Magnac<!-- <br> -->,
+              19320 Saint-Martin-la-Méanne<!-- <br> -->,
+              France
+            </p>
           </li>
         </ul>
       </address>
@@ -97,8 +225,8 @@ address ul {
               it to more complex systems like ammonia.
             </li>
             <li>
-              Made a Scilab 5 library allowing for C&sharp;
-              LINQ/Java streams functional style
+              Made a Scilab 5 library allowing for C♯ LINQ /
+              Java streams functional style
               programmation and chaining akin to SQL
               queries using closures and operator
               overloading.
@@ -252,7 +380,7 @@ address ul {
         <h2>Education</h2>
 
         <div class="entry">
-          <h3>Ph.D.: Quantum Molecular Dynamics</h3>
+          <h3>PhD: Quantum Molecular Dynamics</h3>
           <p class="date">2017-09 – 2021-09</p>
           <p class="place">
             Université De Bourgogne, Dijon, France
@@ -294,7 +422,7 @@ address ul {
         </div>
 
         <div class="entry">
-          <h3>DUT: Computer Science Spec, Software
+          <h3>DUT: Computer Science, specialized in Software
             Engineering</h3>
           <p class="date">2008-09 – 2010-06</p>
           <p class="place">
@@ -341,7 +469,7 @@ address ul {
         </div>
       </section>
 
-      <section>
+      <section id="s-pub">
         <h2>Publications</h2>
         <ul class="desc">
           <li>
@@ -387,7 +515,7 @@ address ul {
         </ul>
       </section>
 
-      <section>
+      <section id="s-skills">
         <h2>Skills of note</h2>
         <h3>Physics and chemistry</h3>
         <ul class="desc">
@@ -407,17 +535,27 @@ address ul {
             PowerShell and python.
           </li>
           <li>
+            Algorithmic and complexity theory.
+          </li>
+          <li>Database and distributed systems.</li>
+          <li>Data visualization.</li>
+          <li>
             Web languages, both client and server side.
           </li>
           <li>
-            Integrated device and low-level programming.
+            Integrated devices and low-level programming.
+          </li>
+          <li>
+            Multimedia analysis and programming, e.g.
+            medical images filters, sound processing, video
+            games, PDF generation.
           </li>
           <li>Version control.</li>
         </ul>
 
       </section>
 
-      <section class="lang">
+      <section id="lang">
         <h2>Languages</h2>
         <dl><dt>French</dt><dd>native</dd></dl>
         <dl><dt>English</dt><dd>fluent</dd></dl>
