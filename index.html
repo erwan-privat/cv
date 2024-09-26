@@ -36,6 +36,7 @@
 
 html {
   background: var(--fg);
+  padding: 1cm 0;
 }
 
 body {
@@ -43,6 +44,7 @@ body {
   margin: auto;
   padding-bottom: 5mm;
   font-family: "Inria Sans", sans-serif;
+  box-shadow: 0 0 10cm grey;
   background: var(--bg);
   color: var(--fg);
 }
@@ -138,8 +140,18 @@ h3 {
   margin: 2mm 0;
 }
 
+.date {
+  float: right;
+  color: black;
+  font-style: normal;
+}
+
 .entry, .desc {
-  margin-top: 3mm;
+  margin-top: 2mm;
+}
+
+.desc li:before {
+  content: "‣ ";
 }
 
 dt {
@@ -148,15 +160,30 @@ dt {
   font-weight: bold;
 }
 
-dt:after {
-  content: ":";
-}
-
 dd {
   display: inline-block;
   margin-left: 6pt;
 }
 
+/* PRINT */
+
+@page {
+  size: 21cm 29.7cm;
+  margin: 0;
+}
+
+@media print {
+  html {
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+
+  body {
+    background: none;
+    box-shadow: none;
+  }
+}
     </style>
   </head>
   <body>
@@ -255,7 +282,8 @@ dd {
               Used different numerical methods to study
               quantum scattering theory and stereodynamics
               applied to an isotopic exchange reaction of
-              oxygen.
+              oxygen, mainly in the context of the
+              mass-independant fraction (MIF) of ozone.
             </li>
             <li>
               Produced stereodynamical portraits for the
@@ -263,15 +291,14 @@ dd {
               function.
             </li>
             <li>
-              <em>More info on
-                <a href="https://theses.fr/2021UBFCK026">
-                  https://theses.fr/2021UBFCK026</a>
-                (an english summary is available).
-              </em>
-            </li>
-            <li>
               Supervised by Pascal Honvault and Grégoire
               Guillon.
+            </li>
+            <li>
+              <em>
+                Access to the thesis in the Publications
+                section (an english summary is available).
+              </em>
             </li>
           </ul>
         </div>
@@ -442,23 +469,26 @@ dd {
       <section>
         <h2>Teaching experience</h2>
         <div class="entry">
-          <h3>Radboud University</h3>
+          <h3>Quantum Dynamics</h3>
+          <p class="place">Radboud University</p>
           <p class="date">2021 – 2023</p>
           <ul class="desc">
             <li>
               Quantum dynamics lectures for second-year
-              master's students.
+              master's students, tutorial and practical
+              application in programmation classes.
             </li>
           </ul>
         </div>
 
         <div class="entry">
-          <h3>Université de Bourgogne</h3>
+          <h3>Classical and Quantum Physics Supervision</h3>
           <p class="date">2017 – 2019</p>
+          <p class="place">Université de Bourgogne</p>
           <ul class="desc">
             <li>
               Supervision of one intern per year, during 3
-              weeks each on different research internships
+              weeks each on different research problems
               centered around the MIF problem of ozone.
             </li>
             <li>
@@ -512,6 +542,14 @@ dd {
               427–431.
             </a>
           </li>
+          <li>
+            <a href="https://theses.fr/2021UBFCK026">
+              E. Privat, “Dynamique quantique de la réaction
+              d'échange isotopique de l'oxygène : temps de
+              vie des états métastables du complexe ozone
+              intermédiaire”, thesis, 2021.
+            </a>
+          </li>
         </ul>
       </section>
 
@@ -520,9 +558,10 @@ dd {
         <h3>Physics and chemistry</h3>
         <ul class="desc">
           <li>Theoretical modeling.</li>
-          <li>Quantum dynamical computation.</li>
+          <li>Quantum dynamics.</li>
+          <li>Reactive and inelastic scattering.</li>
+          <li>Stereodynamics.</li>
           <li>Angular momentum theory.</li>
-          <li>Electronic structure.</li>
         </ul>
         <h3>Computer science</h3>
         <ul class="desc">
