@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- ALEPH -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -13,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <title>Erwan Privat – CV</title>
     <style>
-
 /* GENERAL */
 
 :root {
@@ -104,6 +104,12 @@ address li a {
 /* [id^="lbl-"] { */
 address label {
   display: none;
+}
+
+#orcid img {
+  width: 16px;
+  margin-bottom: -2px;
+  margin-right: 4px;
 }
 
 /* MAIN */
@@ -221,6 +227,15 @@ dd {
             </a>
           </li>
           <li>
+            <label id="lbl-orcid">Orcid</label>
+            <a id="orcid"
+               href="https://orcid.org/0000-0002-2599-6591">
+              <img
+              src="https://orcid.org/assets/vectors/orcid.logo.icon.svg"
+              alt="Orcid logo">0000-0002-2599-6591
+            </a>
+          </li>
+          <li>
             <label id="lbl-phone">Phone</label>
             <a id="phone" href="tel:+33635945095">
               +33 6 35 94 50 95
@@ -241,6 +256,20 @@ dd {
     <main>
       <section>
         <h2>Research experience and work history</h2>
+
+        <div class="entry">
+          <h3>Postdoctoral Researcher</h3>
+          <p class="date">since 2024-12</p>
+          <p class="place">
+            Università degli Studi di Padova, Italy
+          </p>
+          <ul class="desc">
+            <li>
+              Work in progress, mainly around using
+              machine learning in various quantum processes.
+            </li>
+          </ul>
+        </div>
 
         <div class="entry">
           <h3>Postdoctoral Researcher</h3>
@@ -474,8 +503,8 @@ dd {
         <h2>Teaching experience</h2>
         <div class="entry">
           <h3>Quantum Dynamics</h3>
-          <p class="place">Radboud University</p>
           <p class="date">2021 – 2023</p>
+          <p class="place">Radboud University</p>
           <ul class="desc">
             <li>
               Quantum dynamics lectures for second-year
@@ -506,6 +535,16 @@ dd {
       <section id="s-pub">
         <h2>Publications</h2>
         <ul class="desc">
+          <li>
+            <a href="https://doi.org/10.1021/acsomega.5c04304">
+              E. Privat, I. Fortunati, C. Ferrante, S. Rampino, A.
+              Polimeno, "Data-driven analysis of fluorescence
+              lifetime imaging experiments: Unraveling the
+              signal/stress relationship of polluted microalgae cells
+              with machine learning",
+              <i>ACS Omega</i> 2025, 10, 23, 25111–25119
+            </a>
+          </li>
           <li>
             <a href="https://doi.org/10.1063/5.0040717">
               E. Privat, G. Guillon and P. Honvault,
